@@ -62,14 +62,8 @@ var cardButtonCallback = function(t){
   var items = Object.keys(pointScale).map(function(pointCode){
     return {
       text: pointScale[pointCode].title,
-      cost: pointScale[pointCode].cost,
       callback: function(t){
-        t.set('card', 'shared', 'points', pointCode ).then(function() {
-          console.log("ATTEMPTING", pointCode);
-          console.log("SET POINTS", t.get('shared', 'card', 'points', 'DEFAULT'));  
-        });
-
-        return t.set('card', 'shared', 'points', pointCode )
+        return t.set('card', 'shared', 'points', 'xs')
         .then(function(){
           return t.closePopup();
         })
@@ -78,12 +72,12 @@ var cardButtonCallback = function(t){
   });
 
   return t.popup({
-    title: 'Popup Search Example',
+    title: 'Points',
     items: items,
     search: {
       count: 5,
-      placeholder: 'Search National Parks',
-      empty: 'No parks found'
+      placeholder: 'Search Point Sizes',
+      empty: 'No sizes found'
     }
   });
 };
