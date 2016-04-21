@@ -65,7 +65,7 @@ var cardButtonCallback = function(t){
       text: pointScale[pointCode].title,
       callback: function(t){
         t.get('card', 'shared', 'points', 'DEFAULT').then(function(d) { console.log("POINTS EXISTING", d); });
-        return t.set('card', 'shared', 'points', 'xs')
+        return t.set('card', 'shared', 'points', pointCode)
         .then(function(){
           t.get('card', 'shared', 'points', 'DEFAULT').then(function(d) { console.log("SET EXISTING", d); });
           return t.closePopup();
