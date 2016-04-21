@@ -12,12 +12,12 @@ var pointScale = {
 };
 
 var getBadges = function(t){
-  console.log("Getting Badge");
+  console.log("Getting Badge", t);
   return {
     dynamic: function(){
       return {
         title: 'Detail Badge', // for detail badges only
-        text: 'Dynamic ' + (Math.random() * 100).toFixed(0).toString(),
+        text: (Math.random() * 100).toFixed(0).toString(),
         icon: './images/icon.svg', // for card front badges only
         color: 'red',
         refresh: 10
