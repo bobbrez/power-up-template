@@ -12,10 +12,10 @@ var pointScale = {
 };
 
 var getBadges = function(t){
-  console.log("Getting Badge", t.get('shared', 'card', 'points', 'DEFAULT'));
   return {
     dynamic: function(t, context){
       console.log("DYNAMIC", context);
+      console.log("Getting Badge", t.get('shared', 'card', 'points', 'DEFAULT'));
       return {
         title: 'Points', // for detail badges only
         icon: './images/icon-white.svg', // for card front badges only
