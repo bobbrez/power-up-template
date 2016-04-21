@@ -65,6 +65,7 @@ var cardButtonCallback = function(t){
       cost: pointScale[pointCode].cost,
       callback: function(t){
         t.set('card', 'shared', 'points', pointScale[pointCode] ).then(function() {
+          console.log("ATTEMPTING", pointScale[pointCode]);
           console.log("SET POINTS", t.get('shared', 'card', 'points', 'DEFAULT'));  
         });
 
