@@ -64,8 +64,10 @@ var cardButtonCallback = function(t){
       text: pointScale[pointCode].title,
       cost: pointScale[pointCode].cost,
       callback: function(t){
-        t.set('card', 'shared', 'points', pointScale[pointCode] );
-        console.log("SET POINTS", t.get('shared', 'card', 'points', 'DEFAULT'));
+        t.set('card', 'shared', 'points', pointScale[pointCode] ).then(function() {
+          console.log("SET POINTS", t.get('shared', 'card', 'points', 'DEFAULT'));  
+        });
+
         return t.set('card', 'shared', 'points', pointScale[pointCode] )
         .then(function(){
           return t.closePopup();
