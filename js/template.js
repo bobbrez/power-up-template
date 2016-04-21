@@ -4,11 +4,11 @@ var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
 
 var pointScale = {
-  'X-Small' : 1,
-  'Small'   : 2,
-  'Medium'  : 4,
-  'Large'   : 8,
-  'X-Large' : 16
+  xs: { cost: 1,  title: 'X-Small', color: 'green' },
+  sm: { cost: 2,  title: 'Small',   color: 'green' },
+  md: { cost: 4,  title: 'Medium',  color: 'yellow' },
+  lg: { cost: 8,  title: 'Large',   color: 'red' },
+  xl: { cost: 16, title: 'X-Large', color: 'red' }
 };
 
 var getBadges = function(t){
