@@ -18,7 +18,7 @@ var getBadges = function(t){
       return {
         title: 'Detail Badge', // for detail badges only
         text: (Math.random() * 100).toFixed(0).toString(),
-        icon: './images/icon.svg', // for card front badges only
+        icon: './images/icon-white.svg', // for card front badges only
         color: 'red',
         refresh: 10
       }
