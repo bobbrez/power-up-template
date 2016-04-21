@@ -192,7 +192,7 @@ TrelloPowerUp.initialize({
   'board-buttons': function(t, options){
     return [{
       icon: WHITE_ICON,
-      text: 'Template',
+      text: 'Points',
       callback: boardButtonCallback
     }];
   },
@@ -202,7 +202,7 @@ TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
     return [{
       icon: GRAY_ICON,
-      text: 'Template',
+      text: 'Points',
       callback: cardButtonCallback
     }];
   },
