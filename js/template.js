@@ -14,14 +14,18 @@ var pointScale = {
 var getBadges = function(t){
   return {
     dynamic: function(t, context){
-      t.get('card', 'shared', 'points', 'DEFAULT').then(function(d) { console.log("POINTS BADGE", d); });
-      return {
-        title: 'Points', // for detail badges only
-        icon: './images/icon-white.svg', // for card front badges only
-        text: (Math.random() * 100).toFixed(0).toString(),
-        color: 'red',
-        refresh: 10
-      }
+      return t.get('card', 'shared', 'points', 'DEFAULT')
+      .then(function(d) { 
+        console.log("POINTS BADGE", d); 
+        
+        return {
+          title: 'Points', // for detail badges only
+          icon: './images/icon-white.svg', // for card front badges only
+          text: d,
+          color: 'red',
+          refresh: 10
+        };
+      });
     }
   }
 };
