@@ -14,7 +14,6 @@ var pointScale = {
 var getBadges = function(t){
   return {
     dynamic: function(t, context){
-      console.log("DYNAMIC", context);
       console.log("Getting Badge", t.get('shared', 'card', 'points', 'DEFAULT'));
       return {
         title: 'Points', // for detail badges only
@@ -65,6 +64,8 @@ var cardButtonCallback = function(t){
       text: pointScale[pointCode].title,
       cost: pointScale[pointCode].cost,
       callback: function(t){
+        t.set('card', 'shared', 'points', pointScale[pointCode] );
+        console.log("SET POINTS", t.get('shared', 'card', 'points', 'DEFAULT'));
         return t.set('card', 'shared', 'points', pointScale[pointCode] )
         .then(function(){
           return t.closePopup();
