@@ -58,13 +58,13 @@ var boardButtonCallback = function(t){
 };
 
 var cardButtonCallback = function(t){
+  t.get('card').then(function(card){ console.log("CARD", card); });
   var items = Object.keys(pointScale).map(function(pointCode){
     return {
       text: pointScale[pointCode].title,
       callback: function(t){
         return t.set('card', 'shared', 'points', 'xs')
         .then(function(){
-          t.card().then(function(card){ console.log("CARD", card); });
           return t.closePopup();
         })
       }
