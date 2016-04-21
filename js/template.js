@@ -91,7 +91,6 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-badges': function(t, options){
-    console.log("OPTIONS", options);
     return getBadges(t);
   },
   'card-buttons': function(t, options) {
