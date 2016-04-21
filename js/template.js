@@ -21,7 +21,7 @@ var getBadges = function(t){
         
         return {
           title: 'Points', // for detail badges only
-          icon: './images/icon-white.svg', // for card front badges only
+          icon: ('./images/icon-' + (pointScale[d].color === '' ? 'grey' : 'white') + '.svg'), // for card front badges only
           text: pointScale[d].title,
           color: pointScale[d].color,
           refresh: 10
