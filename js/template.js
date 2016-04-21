@@ -14,7 +14,6 @@ var pointScale = {
 var getBadges = function(t){
   return {
     dynamic: function(t, context){
-      t.get('shared', 'card', 'points', 'DEFAULT').then(function(points){ console.log("POINTS", points); });
       return {
         title: 'Points', // for detail badges only
         icon: './images/icon-white.svg', // for card front badges only
@@ -65,6 +64,7 @@ var cardButtonCallback = function(t){
       callback: function(t){
         return t.set('card', 'shared', 'points', 'xs')
         .then(function(){
+          t.get('shared', 'card', 'points', 'DEFAULT').then(function(points){ console.log("SET POINTS", points); });
           return t.closePopup();
         })
       }
