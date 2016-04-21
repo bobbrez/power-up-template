@@ -4,17 +4,18 @@ var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
 
 var pointScale = {
-  xs: { cost: 1,  title: 'X-Small', color: 'green' },
-  sm: { cost: 2,  title: 'Small',   color: 'green' },
-  md: { cost: 4,  title: 'Medium',  color: 'yellow' },
-  lg: { cost: 8,  title: 'Large',   color: 'red' },
-  xl: { cost: 16, title: 'X-Large', color: 'red' }
+  nc: { cost: 0,  title: 'Not Sized', color: '' },
+  xs: { cost: 1,  title: 'X-Small',   color: 'green' },
+  sm: { cost: 2,  title: 'Small',     color: 'green' },
+  md: { cost: 4,  title: 'Medium',    color: 'yellow' },
+  lg: { cost: 8,  title: 'Large',     color: 'red' },
+  xl: { cost: 16, title: 'X-Large',   color: 'red' }
 };
 
 var getBadges = function(t){
   return {
     dynamic: function(t, context){
-      return t.get('card', 'shared', 'points', 'DEFAULT')
+      return t.get('card', 'shared', 'points', 'nc')
       .then(function(d) { 
         console.log("POINTS BADGE", d); 
         
