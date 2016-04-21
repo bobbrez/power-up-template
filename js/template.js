@@ -69,7 +69,7 @@ var cardButtonCallback = function(t){
           console.log("SET POINTS", t.get('shared', 'card', 'points', 'DEFAULT'));  
         });
 
-        return t.set('card', 'shared', 'points', pointScale[pointCode] )
+        return t.set('card', 'shared', 'points', pointCode )
         .then(function(){
           return t.closePopup();
         })
