@@ -12,6 +12,7 @@ var pointScale = {
 };
 
 var getBadges = function(t){
+  console.log("Getting Badge");
   return {
     dynamic: function(){
       return {
