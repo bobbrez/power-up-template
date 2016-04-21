@@ -14,7 +14,7 @@ var pointScale = {
 var getBadges = function(t){
   return {
     dynamic: function(t, context){
-      console.log("NAME", t.card('name'));
+      console.log("NAME", t.card('name').get('name'));
       console.log("Getting Badge", t.get('shared', 'card', 'points', 'DEFAULT'));
       return {
         title: 'Points', // for detail badges only
