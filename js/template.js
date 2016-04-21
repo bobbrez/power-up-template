@@ -16,9 +16,9 @@ var getBadges = function(t){
   return {
     dynamic: function(){
       return {
-        title: 'Detail Badge', // for detail badges only
-        text: (Math.random() * 100).toFixed(0).toString(),
+        title: 'Points', // for detail badges only
         icon: './images/icon-white.svg', // for card front badges only
+        text: (Math.random() * 100).toFixed(0).toString(),
         color: 'red',
         refresh: 10
       }
@@ -92,6 +92,7 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-badges': function(t, options){
+    console.log("OPTIONS", options);
     return getBadges(t);
   },
   'card-buttons': function(t, options) {
