@@ -59,10 +59,12 @@ var boardButtonCallback = function(t){
 
 var cardButtonCallback = function(t){
   t.get('card').then(function(card){ console.log("CARD", card); });
+  
   var items = Object.keys(pointScale).map(function(pointCode){
     return {
       text: pointScale[pointCode].title,
       callback: function(t){
+        t.get('card', 'shared', 'points', 'DEFAULT').then(function(d) { console.log(d); });
         return t.set('card', 'shared', 'points', 'xs')
         .then(function(){
           return t.closePopup();
